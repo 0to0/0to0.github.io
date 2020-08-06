@@ -55,24 +55,6 @@ function displaySuggestions() {
         autocompleteList.appendChild(searchResults[i]);
     }
 
-    searchResults = searchJavadocMethods(searchBox.value);
-    autocompleteList.innerHTML += '<div class="dropdown-header"><strong>Methods</strong></div>';
-    if (searchResults.length <= 0) {
-        autocompleteList.innerHTML += '<div class="dropdown-header">No results</div>';
-    }
-    for (let i = 0; i < searchResults.length; i++) {
-        autocompleteList.appendChild(searchResults[i]);
-    }
-
-    searchResults = searchJavadocClasses(searchBox.value);
-    autocompleteList.innerHTML += '<div class="dropdown-header"><strong>Classes</strong></div>';
-    if (searchResults.length <= 0) {
-        autocompleteList.innerHTML += '<div class="dropdown-header">No results</div>';
-    }
-    for (let i = 0; i < searchResults.length; i++) {
-        autocompleteList.appendChild(searchResults[i]);
-    }
-
     $('#autocomplete-list').dropdown('toggle');
 }
 
@@ -84,59 +66,6 @@ function searchWikiArticles(search) {
         if (wikiJson[i].title.toLowerCase().indexOf(search.toLowerCase()) !== -1) {
             let autocompleteElement = document.createElement('div');
             autocompleteElement.innerHTML = '<a class="dropdown-item" href="' + wikiJson[i].url + '" onclick="location.href = \'' + wikiJson[i].url + '\'">' + highlightWordsNoCase(wikiJson[i].title, searchBox.value) + '</a>';
-            searchResults.push(autocompleteElement);
-            counter++;
-        }
-        if (counter >= 5) {
-            break;
-        }
-    }
-    return searchResults;
-}
-
-// Search for javadooc methods and return an array with html elements
-function searchJavadocMethods(search) {
-    let searchResults = [];
-    let counter = 0;
-    for (let i = 0; i < memberSearchIndex.length; i++) {
-        let packageName = memberSearchIndex[i].p;
-        let className = memberSearchIndex[i].c;
-        let methodName = memberSearchIndex[i].l;
-        let url = memberSearchIndex[i].url;
-        let fullName = className + '#' + methodName;
-        // Skip internal methods
-        if (packageName.indexOf('.internal') !== -1) {
-            continue;
-        }
-        url = javadocBaseUrl + packageName.replace(/\./g, '/') + '/' + className + '.html#' + (url === undefined ? methodName.replace('(', '-').replace(')', '-') : url);
-        if (fullName.toLowerCase().indexOf(search.toLowerCase()) !== -1) {
-            let autocompleteElement = document.createElement('div');
-            autocompleteElement.innerHTML = '<a class="dropdown-item" href="' + url + '" onclick="location.href = \'' + url + '\'">' + highlightWordsNoCase(fullName, searchBox.value) + '</a>';
-            searchResults.push(autocompleteElement);
-            counter++;
-        }
-        if (counter >= 5) {
-            break;
-        }
-    }
-    return searchResults;
-}
-
-// Search for javadooc classes and return an array with html elements
-function searchJavadocClasses(search) {
-    let searchResults = [];
-    let counter = 0;
-    for (let i = 0; i < typeSearchIndex.length; i++) {
-        let packageName = typeSearchIndex[i].p;
-        let className = typeSearchIndex[i].l;
-        // Skip internal methods
-        if (packageName.indexOf('.internal') !== -1) {
-            continue;
-        }
-        let url = javadocBaseUrl + packageName.replace(/\./g, '/') + '/' + className + '.html';
-        if (className.toLowerCase().indexOf(search.toLowerCase()) !== -1) {
-            let autocompleteElement = document.createElement('div');
-            autocompleteElement.innerHTML = '<a class="dropdown-item" href="' + url + '" onclick="location.href = \'' + url + '\'">' + highlightWordsNoCase(className, searchBox.value) + '</a>';
             searchResults.push(autocompleteElement);
             counter++;
         }

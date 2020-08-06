@@ -1,63 +1,5 @@
-// TODO get base url dynamically
-let javadocBaseUrl = 'https://docs.javacord.org/api/v/';
 let memberSearchIndex = [];
 let typeSearchIndex = [];
-
-// Get all release versions
-$.get('https://docs.javacord.org/rest/versions', function (versions) {
-    let dropdown = document.getElementById('changelog-dropdown-content');
-
-    for (let i = 0; i < versions.length; i++) {
-        if (i >= 10) {
-            break;
-        }
-
-        if (i === 1) {
-            let dropdownDivider = document.createElement('div');
-            dropdownDivider.setAttribute('class', 'dropdown-divider');
-            dropdown.appendChild(dropdownDivider);
-        }
-
-        let dropdownElement = document.createElement('a');
-        dropdownElement.setAttribute('class', 'dropdown-item');
-        dropdownElement.setAttribute('href', 'https://github.com/Javacord/Javacord/releases/tag/v' + versions[i]);
-        dropdownElement.innerText = versions[i];
-        if (i === 0) {
-            dropdownElement.innerText += ' (latest)';
-        }
-        dropdown.appendChild(dropdownElement);
-    }
-
-}, 'json');
-
-// Get the latest version
-$.get('https://docs.javacord.org/rest/latest-version/release', function (data) {
-    javadocBaseUrl += data.version + '/';
-
-    // Get JavaDoc methods
-    $.getScript(javadocBaseUrl + 'member-search-index.js', function () {
-        // Sort by length
-        memberSearchIndex.sort(function(a, b) {
-            return (a.c + '#' + a.l).length - (b.c + '#' + b.l).length;
-        });
-    });
-
-    // Get JavaDoc classes
-    $.getScript(javadocBaseUrl + 'type-search-index.js', function () {
-        // Sort by length
-        typeSearchIndex.sort(function(a, b) {
-            return a.l.length - b.l.length;
-        });
-    });
-
-    // Replace ${latest-version} with the latest version
-    replaceInDOM(document.body, /\${latest-version}/g, data.version);
-
-    // Replace ${latest-snapshot-version} with the latest version
-    let snapshotVersion = `${data.version.split('\.')[0]}.${data.version.split('\.')[1]}.${parseInt(data.version.split('\.')[2]) + 1}-SNAPSHOT`;
-    replaceInDOM(document.body, /\${latest-snapshot-version}/g, snapshotVersion);
-
-}, 'json');
 
 // Get the wiki data
 let wikiJson = [];
@@ -141,59 +83,6 @@ function searchWikiArticles(search) {
         if (wikiJson[i].title.toLowerCase().indexOf(search.toLowerCase()) !== -1) {
             let autocompleteElement = document.createElement('div');
             autocompleteElement.innerHTML = '<a class="dropdown-item" href="' + wikiJson[i].url + '" onclick="location.href = \'' + wikiJson[i].url + '\'">' + highlightWordsNoCase(wikiJson[i].title, searchBox.value) + '</a>';
-            searchResults.push(autocompleteElement);
-            counter++;
-        }
-        if (counter >= 5) {
-            break;
-        }
-    }
-    return searchResults;
-}
-
-// Search for javadooc methods and return an array with html elements
-function searchJavadocMethods(search) {
-    let searchResults = [];
-    let counter = 0;
-    for (let i = 0; i < memberSearchIndex.length; i++) {
-        let packageName = memberSearchIndex[i].p;
-        let className = memberSearchIndex[i].c;
-        let methodName = memberSearchIndex[i].l;
-        let url = memberSearchIndex[i].url;
-        let fullName = className + '#' + methodName;
-        // Skip internal methods
-        if (packageName.indexOf('.internal') !== -1) {
-            continue;
-        }
-        url = javadocBaseUrl + packageName.replace(/\./g, '/') + '/' + className + '.html#' + (url === undefined ? methodName.replace('(', '-').replace(')', '-') : url);
-        if (fullName.toLowerCase().indexOf(search.toLowerCase()) !== -1) {
-            let autocompleteElement = document.createElement('div');
-            autocompleteElement.innerHTML = '<a class="dropdown-item" href="' + url + '" onclick="location.href = \'' + url + '\'">' + highlightWordsNoCase(fullName, searchBox.value) + '</a>';
-            searchResults.push(autocompleteElement);
-            counter++;
-        }
-        if (counter >= 5) {
-            break;
-        }
-    }
-    return searchResults;
-}
-
-// Search for javadooc classes and return an array with html elements
-function searchJavadocClasses(search) {
-    let searchResults = [];
-    let counter = 0;
-    for (let i = 0; i < typeSearchIndex.length; i++) {
-        let packageName = typeSearchIndex[i].p;
-        let className = typeSearchIndex[i].l;
-        // Skip internal methods
-        if (packageName.indexOf('.internal') !== -1) {
-            continue;
-        }
-        let url = javadocBaseUrl + packageName.replace(/\./g, '/') + '/' + className + '.html';
-        if (className.toLowerCase().indexOf(search.toLowerCase()) !== -1) {
-            let autocompleteElement = document.createElement('div');
-            autocompleteElement.innerHTML = '<a class="dropdown-item" href="' + url + '" onclick="location.href = \'' + url + '\'">' + highlightWordsNoCase(className, searchBox.value) + '</a>';
             searchResults.push(autocompleteElement);
             counter++;
         }

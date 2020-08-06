@@ -24,7 +24,7 @@
 
   // Hover state
   @include hover-focus {
-    color: $list-group-action-hover-color;
+    color: $bright-but-not-white;
     text-decoration: none;
     background-color: #b70000;
   }

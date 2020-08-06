@@ -79,12 +79,6 @@ img {
   text-decoration-line: underline;
 }
 
-// Left to right used to obfuscate the email
-.ltr-text {
-  unicode-bidi: bidi-override;
-  direction: rtl
-}
-
 // Proper markdown quotes
 blockquote p {
   padding: 2px 8px;

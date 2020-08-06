@@ -2,12 +2,12 @@
 // Bootswatch
 
 //
-// Discord colors
+// colors
 //
-$blurple:             #7289DA !default;
+$mainred:             #b80000 !default;
 $greyple:             #99AAB5 !default;
-$dark-but-not-black:  #2C2F33 !default;
-$not-quite-black:     #23272A !default;
+$dark-but-not-black:  #111111 !default;
+$not-quite-black:     #010101 !default;
 
 //
 // Color system
@@ -36,7 +36,7 @@ $green:   #469408 !default;
 $teal:    #20c997 !default;
 $cyan:    #029ACF !default;
 
-$primary:       $blurple !default;
+$primary:       $mainred !default;
 $secondary:     $white !default;
 $success:       $green !default;
 $info:          $cyan !default;
@@ -47,7 +47,7 @@ $dark:          $gray-800 !default;
 
 // Body
 
-$body-bg:                   $white !default;
+$body-bg:                   $black !default;
 
 // Fonts
 

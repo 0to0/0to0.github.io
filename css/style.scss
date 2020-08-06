@@ -122,6 +122,7 @@ blockquote p {
   border: 1px solid rgba(0,0,0,.1525);
   border-radius: 2px;
 }
+
 pre.highlight {
   font-family: 'Comic Sans MS', monospace !important;
 }
@@ -164,7 +165,7 @@ pre.highlight {
 
   font-size: 12px;
 
-  border-top: 5px solid $blurple;
+  border-top: 5px solid $mainred;
 
   background-color: $not-quite-black;
   color: hsla(0,0%,100%,.6);

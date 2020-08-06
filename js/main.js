@@ -74,7 +74,7 @@ function searchWikiArticles(search) {
             searchResults.push(autocompleteElement);
             counter++;
         }
-        if (counter >= 5) {
+        if (counter >= 7) {
             break;
         }
     }

@@ -1,7 +1,3 @@
-// TODO get base url dynamically
-let memberSearchIndex = [];
-let typeSearchIndex = [];
-
 // Get the wiki data
 let wikiJson = [];
 $.get('/api/wiki.json', function (data) {
@@ -63,7 +59,9 @@ function searchWikiArticles(search) {
     let searchResults = [];
     let counter = 0;
     for (let i = 0; i < wikiJson.length; i++) {
-        if (wikiJson[i].title.toLowerCase().indexOf(search.toLowerCase()) !== -1) {
+        const searchLowerCase = search.toLowerCase();
+        if (wikiJson[i].title.toLowerCase().indexOf(searchLowerCase) !== -1
+                || wikiJson[i].keywords.toLowerCase().indexOf(searchLowerCase) !== -1) {
             let autocompleteElement = document.createElement('div');
             autocompleteElement.innerHTML = '<a class="dropdown-item" href="' + wikiJson[i].url + '" onclick="location.href = \'' + wikiJson[i].url + '\'">' + highlightWordsNoCase(wikiJson[i].title, searchBox.value) + '</a>';
             searchResults.push(autocompleteElement);

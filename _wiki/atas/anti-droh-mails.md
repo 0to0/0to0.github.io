@@ -11,29 +11,7 @@ keywords:
 - E-mails
 ---
 
-# Dokumentation des Anti-Terror-Anschlags des Asozialen Netzwerkes mit Anti-Drohmails:
-
-
-
-## Was ist das Asoziale Netzwerk?
-
-Das System ist asozial und es gibt nichts soziales im Asozialen. Folglich muss etwas wirklich Soziales asozial genannt werden. Das Asoziale Netzwerk ist eine Anti-Terror-Organisation, gegen den Terror der Schulen und Fabriken, der Medien und der Regierung, der Leitkultur und des Lobbyismus und der Wirtschaft, gegen den Terror des real existierenden Asozialismus. Es gibt keine Hierarchien und jedes Mitglied darf sich einen natürlich bedeutungslosen Rang oder Titel aussuchen.
-Das Ganze basiert auf Marc-Uwe Klings Känguru-Reihe und breitet sich schon seit Veröffentlichung dieser Reihe, vor allem in den Sozialen Netzwerken, immer weiter aus. 
-Mehr Infos gibt es im Känguru Wiki ( https://die-kaenguru-chroniken.fandom.com/wiki/Das_Kaenguru_Wiki ) und auf der Website des Asozialen Netzwerks ( https://asoziales-netzwerk.net/ ), die es vor allem zur Vernetzung einzelner Gruppen gibt. Die Größe des Asozialen Netzwerkes lässt sich nicht genau bestimmen, es besteht aus sehr vielen Gruppierungen die unabhängig voneinander operieren.
-
-
-## Anti-Terror-Anschläge:
-
-Das Asoziale Netzwerk verübt in unregelmäßigen Abständen Anti-Terror-Anschläge. Diese können von einem oder mehreren Mitgliedern ausgeführt und benannt werden, richten sich gegen den real existierenden Asozialismus und sollten sich auch niemals auf dessen Niveau herablassen:
-
->„Wenn unser Ziel eine witzigere Welt ist, muss auch unser Widerstand schon witzig sein!“
-
-~ Das Känguru in „Die Känguru-Offenbarung“
-
-
-
-## Anti-Drohmails:
-
+## Dokumentation des Anti-Terror-Anschlags des Asozialen Netzwerkes mit Anti-Drohmails:
 
 ### Die Idee:
 Die Drohmails der NSU 2.0 fingen an, was erneut Hass und Hetze durch ein rechtes Netzwerke bedeutete. Wir vom Asozialen Netzwerk wollten dies nicht einfach hinnehmen und so kam „Der Produzent“ auf die Idee, eine Gegenaktion zu starten. Innerhalb weniger Minuten bildete sich eine AG, die auch sofort mit der Planung dieses Anti-Terror-Anschlages begann. 
@@ -68,7 +46,7 @@ Wir sind das Asoziale Netzwerk und wollen am heutigen Tag der Freundschaft eine 
 Vielen Dank“
 
 
-## Die Sache mit der AfD:
+### Die Sache mit der AfD:
 
 Wir haben auch lange darüber diskutiert ob wir auch E-Mails an die AfD schicken sollen. Letztendlich haben wir uns aus folgenden Gründen dafür entschieden, obwohl uns klar war, dass die AfD mit dem Klima das sie verbreitet ein Stückweit mit Schuld an den Drohmails der NSU 2.0 trägt:
 1. Wer sich für mehr Liebe und Freundschaft einsetzt, sollte dabei nicht bestimmte Gruppen ausgrenzen.
@@ -76,10 +54,10 @@ Wir haben auch lange darüber diskutiert ob wir auch E-Mails an die AfD schicken
 3. Wir haben uns in jedem Text von politischen Inhalten differenziert und klar gemacht, dass wir nicht unbedingt die gleiche Meinung haben.
 
 
-## Dokumente, die zu der Aktion erstellt wurden, sind unter https://github.com/asozialesnetzwerk/Dokumente gesammelt worden und öffentlich einsehbar.
+#### Dokumente, die zu der Aktion erstellt wurden, sind unter https://github.com/asozialesnetzwerk/Dokumente gesammelt worden und öffentlich einsehbar.
 
 
-## Rückmeldungen der Politiker und der Medien (Screenshots) sowie sonstige Bilder und Videos:
+### Rückmeldungen der Politiker und der Medien (Screenshots) sowie sonstige Bilder und Videos:
 ![#ag-anti-droh-mails - Asoziales Netzwerk mit einer Einstellung in 3D! - Discord - 1](https://raw.githubusercontent.com/asozialesnetzwerk/Dokumente/master/Bildergalerie/%23ag-anti-droh-mails%20-%20Asoziales%20Netzwerk%20mit%20einer%20Einstellung%20in%203D!%20-%20Discord%20-%201.png)
 ![#ag-anti-droh-mails - Asoziales Netzwerk mit einer Einstellung in 3D! - Discord - 2](https://raw.githubusercontent.com/asozialesnetzwerk/Dokumente/master/Bildergalerie/%23ag-anti-droh-mails%20-%20Asoziales%20Netzwerk%20mit%20einer%20Einstellung%20in%203D!%20-%20Discord%20-%202.png)
 ![Aw: Anti-Droh-Mail](https://raw.githubusercontent.com/asozialesnetzwerk/Dokumente/master/Bildergalerie/Aw%20Anti-Droh-Mail.jpg)

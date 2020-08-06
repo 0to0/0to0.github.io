@@ -53,8 +53,6 @@ img {
 
 // The headline on the front-page
 .front-page-highlight {
-  background: url("/img/patterns/connectwork.png") repeat;
-
   border-radius: 0;
   padding-top: 50px;
   padding-bottom: 50px;
@@ -200,5 +198,4 @@ body {
   display: flex;
   flex-flow: column;
   min-height: 100%;
-  background-image: url("/img/patterns/crossword.png");
 }

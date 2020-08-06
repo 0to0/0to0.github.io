@@ -60,6 +60,7 @@ function searchWikiArticles(search) {
     let counter = 0;
     for (let i = 0; i < wikiJson.length; i++) {
         const searchLowerCase = search.toLowerCase();
+        console.log(wikiJson[i]);
         if (wikiJson[i].title.toLowerCase().indexOf(searchLowerCase) !== -1
                 || wikiJson[i].keywords.toLowerCase().indexOf(searchLowerCase) !== -1) {
             let autocompleteElement = document.createElement('div');

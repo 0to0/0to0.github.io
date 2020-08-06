@@ -43,9 +43,9 @@ function displaySuggestions() {
 
     // Fill dropdown menu
     let searchResults = searchWikiArticles(searchBox.value);
-    autocompleteList.innerHTML += '<div class="dropdown-header"><strong>Wiki-Articles</strong></div>';
+    autocompleteList.innerHTML += '<div class="dropdown-header"><strong>Wiki-Artikel</strong></div>';
     if (searchResults.length <= 0) {
-        autocompleteList.innerHTML += '<div class="dropdown-header">No results</div>';
+        autocompleteList.innerHTML += '<div class="dropdown-header">Keine Ergebnisse</div>';
     }
     for (let i = 0; i < searchResults.length; i++) {
         autocompleteList.appendChild(searchResults[i]);

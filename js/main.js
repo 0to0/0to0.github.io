@@ -60,9 +60,15 @@ function searchWikiArticles(search) {
     let counter = 0;
     for (let i = 0; i < wikiJson.length; i++) {
         const searchLowerCase = search.toLowerCase();
-        console.log(wikiJson[i]);
-        if (wikiJson[i].title.toLowerCase().indexOf(searchLowerCase) !== -1
-                || wikiJson[i].keywords.toLowerCase().indexOf(searchLowerCase) !== -1) {
+        const keywords = wikiJson[0].keywords;
+        let found = false;
+        for (let j = 0; j < keywords.length; j++) {
+            if (keywords[j].toLowerCase().indexOf(searchLowerCase) !== -1) {
+                found = true;
+                break;
+            }
+        }
+        if (found || wikiJson[i].title.toLowerCase().indexOf(searchLowerCase) !== -1) {
             let autocompleteElement = document.createElement('div');
             autocompleteElement.innerHTML = '<a class="dropdown-item" href="' + wikiJson[i].url + '" onclick="location.href = \'' + wikiJson[i].url + '\'">' + highlightWordsNoCase(wikiJson[i].title, searchBox.value) + '</a>';
             searchResults.push(autocompleteElement);
